@@ -1,0 +1,291 @@
+{
+  "_schema": "BMB Product Catalog — maps Shopify products to merch pipeline config",
+  "_version": "2.0.0",
+  "_updated": "2025-07-14",
+  "_notes": [
+    "DO NOT modify Shopify catalog — this file maps EXISTING products only.",
+    "shopifyProductId and shopifyVariantIds come from Shopify Admin.",
+    "internalId is the BMB product code used in the Flutter app.",
+    "mockup fields control how the bracket preview is composited.",
+    "isActive: boolean — set false to hide from GET /products (no redeploy needed via PATCH /admin/products/:id).",
+    "discontinuedAt: ISO date or null — informational only, set when product is retired.",
+    "supportedVariants: array of Shopify variant IDs currently fulfillable.",
+    "To add a new product: add an entry here, then add a mockup image to assets/mockups/."
+  ],
+  "products": [
+    {
+      "internalId": "bp_grid_iron",
+      "shopifyProductId": "9208241586344",
+      "shopifyHandle": "bmb-grid-iron-tech-fleece-hoodie",
+      "title": "BMB - Sport-Tek Grid Iron Tech Fleece Hoodie",
+      "shortTitle": "Grid Iron Hoodie",
+      "productType": "hoodie",
+      "printWidthInches": 12,
+      "printDpi": 300,
+      "previewPlacement": {
+        "xCenter": true,
+        "yOffsetPx": 500,
+        "bracketWidthPct": 0.45
+      },
+      "mockup": {
+        "localFile": "st250_black_back.png",
+        "fallbackUrl": "https://www.genspark.ai/api/files/s/axoy1pbZ?cache_control=3600"
+      },
+      "shopifyVariantIds": {
+        "_note": "Replace placeholder IDs with real Shopify variant IDs from Admin > Products",
+        "Black / XS": "48123456789000",
+        "Black / S": "48123456789001",
+        "Black / M": "48123456789002",
+        "Black / L": "48123456789003",
+        "Black / XL": "48123456789004",
+        "Black / 2X": "48123456789005"
+      },
+      "supportedVariants": [
+        "48123456789000",
+        "48123456789001",
+        "48123456789002",
+        "48123456789003",
+        "48123456789004",
+        "48123456789005"
+      ],
+      "colors": [
+        "Black",
+        "Graphite Heather",
+        "Vintage Heather",
+        "True Navy",
+        "True Red",
+        "True Royal"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2X",
+        "3X",
+        "4X"
+      ],
+      "basePrice": 45,
+      "printUpcharge": 15,
+      "isActive": true,
+      "discontinuedAt": null
+    },
+    {
+      "internalId": "bp_tri_tee",
+      "shopifyProductId": "9202022514856",
+      "shopifyHandle": "bmb-perfect-tri-tee",
+      "title": "BMB - Perfect Tri Tee",
+      "shortTitle": "Perfect Tri Tee",
+      "productType": "tee",
+      "printWidthInches": 12,
+      "printDpi": 300,
+      "previewPlacement": {
+        "xCenter": true,
+        "yOffsetPx": 380,
+        "bracketWidthPct": 0.5
+      },
+      "mockup": {
+        "localFile": "dm130_black_back.png",
+        "fallbackUrl": "https://www.genspark.ai/api/files/s/hiuK6Wia?cache_control=3600"
+      },
+      "shopifyVariantIds": {
+        "Black / S": "48234567890001",
+        "Black / M": "48234567890002",
+        "Black / L": "48234567890003",
+        "Black / XL": "48234567890004"
+      },
+      "supportedVariants": [
+        "48234567890001",
+        "48234567890002",
+        "48234567890003",
+        "48234567890004"
+      ],
+      "colors": [
+        "Black",
+        "Black Frost",
+        "Heather Charcoal",
+        "Grey Heather",
+        "New Navy",
+        "Navy Frost",
+        "Royal Frost",
+        "Red Frost",
+        "Maritime Frost",
+        "Blush Frost",
+        "Fuschia Frost",
+        "Green Frost",
+        "Turquoise Frost"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2X",
+        "3X",
+        "4X"
+      ],
+      "basePrice": 20,
+      "printUpcharge": 12,
+      "isActive": true,
+      "discontinuedAt": null
+    },
+    {
+      "internalId": "bp_street_lounge",
+      "shopifyProductId": "9202019598504",
+      "shopifyHandle": "bmb-street-lounge-french-terry-hoodie",
+      "title": "BMB - New Era Street Lounge French Terry Hoodie",
+      "shortTitle": "Street Lounge Hoodie",
+      "productType": "hoodie",
+      "printWidthInches": 12,
+      "printDpi": 300,
+      "previewPlacement": {
+        "xCenter": true,
+        "yOffsetPx": 500,
+        "bracketWidthPct": 0.45
+      },
+      "mockup": {
+        "localFile": "nea500_black_back.png",
+        "fallbackUrl": "https://www.genspark.ai/api/files/s/69OOSXIu?cache_control=3600"
+      },
+      "shopifyVariantIds": {
+        "Black / S": "48345678901001",
+        "Black / M": "48345678901002",
+        "Black / L": "48345678901003",
+        "Black / XL": "48345678901004"
+      },
+      "supportedVariants": [
+        "48345678901001",
+        "48345678901002",
+        "48345678901003",
+        "48345678901004"
+      ],
+      "colors": [
+        "Black",
+        "Black Twist",
+        "Dark Royal Twist",
+        "Graphite",
+        "Light Graphite Twist",
+        "True Navy"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2X",
+        "3X",
+        "4X"
+      ],
+      "basePrice": 55,
+      "printUpcharge": 15,
+      "isActive": true,
+      "discontinuedAt": null
+    },
+    {
+      "internalId": "bp_on_the_go",
+      "shopifyProductId": "9202016387240",
+      "shopifyHandle": "bmb-on-the-go-tri-blend-hoodie",
+      "title": "BMB - New Era On The Go Tri-Blend Hoodie",
+      "shortTitle": "On The Go Hoodie",
+      "productType": "hoodie",
+      "printWidthInches": 12,
+      "printDpi": 300,
+      "previewPlacement": {
+        "xCenter": true,
+        "yOffsetPx": 500,
+        "bracketWidthPct": 0.45
+      },
+      "mockup": {
+        "localFile": "nea137_black_back.png",
+        "fallbackUrl": "https://www.genspark.ai/api/files/s/Mtz7YQir?cache_control=3600"
+      },
+      "shopifyVariantIds": {
+        "Black / S": "48456789012001",
+        "Black / M": "48456789012002",
+        "Black / L": "48456789012003",
+        "Black / XL": "48456789012004"
+      },
+      "supportedVariants": [
+        "48456789012001",
+        "48456789012002",
+        "48456789012003",
+        "48456789012004"
+      ],
+      "colors": [
+        "Black",
+        "Graphite",
+        "Shadow Grey",
+        "True Navy"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2X",
+        "3X",
+        "4X"
+      ],
+      "basePrice": 45,
+      "printUpcharge": 15,
+      "isActive": true,
+      "discontinuedAt": null
+    },
+    {
+      "internalId": "bp_all_day",
+      "shopifyProductId": "9201709580456",
+      "shopifyHandle": "bmb-all-day-tri-blend-fleece-hoodie",
+      "title": "BMB - New Era All Day Tri-Blend Fleece Hoodie",
+      "shortTitle": "All Day Hoodie",
+      "productType": "hoodie",
+      "printWidthInches": 12,
+      "printDpi": 300,
+      "previewPlacement": {
+        "xCenter": true,
+        "yOffsetPx": 500,
+        "bracketWidthPct": 0.45
+      },
+      "mockup": {
+        "localFile": "nea510_blackheather_back.png",
+        "fallbackUrl": "https://www.genspark.ai/api/files/s/aSKPf8zc?cache_control=3600"
+      },
+      "shopifyVariantIds": {
+        "Black Heather / S": "48567890123001",
+        "Black Heather / M": "48567890123002",
+        "Black Heather / L": "48567890123003",
+        "Black Heather / XL": "48567890123004"
+      },
+      "supportedVariants": [
+        "48567890123001",
+        "48567890123002",
+        "48567890123003",
+        "48567890123004"
+      ],
+      "colors": [
+        "Black Heather",
+        "Royal Heather",
+        "Shadow Grey Heather",
+        "Soft Beige",
+        "True Navy Heather"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2X",
+        "3X",
+        "4X"
+      ],
+      "basePrice": 55,
+      "printUpcharge": 15,
+      "isActive": true,
+      "discontinuedAt": null
+    }
+  ]
+}

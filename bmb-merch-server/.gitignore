@@ -1,0 +1,6 @@
+node_modules/
+output/
+data/fulfillment_log.json
+printer_dropbox/
+.env
+*.log

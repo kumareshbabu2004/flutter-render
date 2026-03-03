@@ -1,0 +1,140 @@
+{
+  "99887766": {
+    "status": "sent",
+    "shopifyOrderId": "99887766",
+    "orderNumber": "#TEST-V3-REGEN",
+    "artifactId": null,
+    "productId": "bp_tri_tee",
+    "attempts": 1,
+    "lastError": null,
+    "createdAt": "2026-02-12T06:34:59.246Z",
+    "processedAt": "2026-02-12T06:34:59.925Z",
+    "lastAttemptAt": "2026-02-12T06:34:59.925Z",
+    "files": {
+      "svg": "bracket_#TEST-V3-REGEN.svg",
+      "rgb_png": "print_ready_rgb_#TEST-V3-REGEN.png",
+      "cmyk_pdf": "print_ready_cmyk_#TEST-V3-REGEN.pdf",
+      "packing_slip": "packing_slip_#TEST-V3-REGEN.pdf"
+    },
+    "emailResult": {
+      "method": "email",
+      "success": true,
+      "messageId": "dev-mode-logged",
+      "attachmentCount": 4
+    }
+  },
+  "12345678901": {
+    "status": "sent",
+    "shopifyOrderId": "12345678901",
+    "orderNumber": "#TEST-V3-001",
+    "artifactId": "1c1ae1aa6548af7b",
+    "productId": "bp_grid_iron",
+    "attempts": 1,
+    "lastError": null,
+    "createdAt": "2026-02-12T06:34:58.500Z",
+    "processedAt": "2026-02-12T06:34:58.625Z",
+    "lastAttemptAt": "2026-02-12T06:34:58.625Z",
+    "files": {
+      "svg": "bracket.svg",
+      "rgb_png": "print_ready_rgb.png",
+      "cmyk_pdf": "print_ready_cmyk.pdf",
+      "packing_slip": "packing_slip_#TEST-V3-001.pdf"
+    },
+    "emailResult": {
+      "method": "email",
+      "success": true,
+      "messageId": "dev-mode-logged",
+      "attachmentCount": 4
+    }
+  },
+  "admin-test-1770879031962": {
+    "status": "sent",
+    "shopifyOrderId": "admin-test-1770879031962",
+    "orderNumber": "#PRINTER-V31-001",
+    "artifactId": "f80abb817111f555",
+    "productId": "bp_grid_iron",
+    "attempts": 1,
+    "lastError": null,
+    "createdAt": "2026-02-12T06:50:32.072Z",
+    "processedAt": "2026-02-12T06:50:32.072Z",
+    "lastAttemptAt": "2026-02-12T06:50:32.072Z",
+    "files": {
+      "svg": "bracket.svg",
+      "rgb_png": "print_ready_rgb.png",
+      "cmyk_pdf": "print_ready_cmyk.pdf",
+      "packing_slip": "packing_slip_#PRINTER-V31-001.pdf"
+    },
+    "emailResult": {
+      "source": "admin-send-to-printer"
+    }
+  },
+  "test-88880002": {
+    "status": "sent",
+    "shopifyOrderId": "test-88880002",
+    "orderNumber": "#V31-TEST-001",
+    "artifactId": "6b5b305b56b64874",
+    "productId": "bp_grid_iron",
+    "attempts": 2,
+    "lastError": null,
+    "createdAt": "2026-02-12T06:53:09.283Z",
+    "processedAt": "2026-02-12T06:53:11.386Z",
+    "lastAttemptAt": "2026-02-12T06:53:11.386Z",
+    "files": {
+      "svg": "bracket.svg",
+      "rgb_png": "print_ready_rgb.png",
+      "cmyk_pdf": "print_ready_cmyk.pdf",
+      "packing_slip": "packing_slip_#V31-TEST-001.pdf"
+    },
+    "emailResult": {
+      "method": "email",
+      "success": true,
+      "messageId": "dev-mode-logged",
+      "attachmentCount": 4
+    }
+  },
+  "test-88880003": {
+    "status": "sent",
+    "shopifyOrderId": "test-88880003",
+    "orderNumber": "#V31-REGEN-001",
+    "artifactId": null,
+    "productId": "bp_tri_tee",
+    "attempts": 1,
+    "lastError": null,
+    "createdAt": "2026-02-12T06:53:09.675Z",
+    "processedAt": "2026-02-12T06:53:10.585Z",
+    "lastAttemptAt": "2026-02-12T06:53:10.585Z",
+    "files": {
+      "svg": "bracket_#V31-REGEN-001.svg",
+      "rgb_png": "print_ready_rgb_test_1770879189677.png",
+      "cmyk_pdf": "print_ready_cmyk_test_1770879189677.pdf",
+      "packing_slip": "packing_slip_#V31-REGEN-001.pdf"
+    },
+    "emailResult": {
+      "method": "email",
+      "success": true,
+      "messageId": "dev-mode-logged",
+      "attachmentCount": 4
+    }
+  },
+  "admin-test-1770879190744": {
+    "status": "sent",
+    "shopifyOrderId": "admin-test-1770879190744",
+    "orderNumber": "#PRINTER-V31-001",
+    "artifactId": "6b5b305b56b64874",
+    "productId": "bp_grid_iron",
+    "attempts": 1,
+    "lastError": null,
+    "createdAt": "2026-02-12T06:53:10.785Z",
+    "processedAt": "2026-02-12T06:53:10.786Z",
+    "lastAttemptAt": "2026-02-12T06:53:10.786Z",
+    "files": {
+      "svg": "bracket.svg",
+      "rgb_png": "print_ready_rgb.png",
+      "cmyk_pdf": "print_ready_cmyk.pdf",
+      "packing_slip": "packing_slip_#PRINTER-V31-001.pdf"
+    },
+    "emailResult": {
+      "source": "admin-send-to-printer"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "6N4HR28LLR.com.backmybracket.app"
+        ],
+        "components": [
+          {
+            "/": "/referralprogram/*",
+            "exclude": true,
+            "comment": "Don't open up the referal program page in the app"
+          },
+          {
+            "/": "/be-a-host/*",
+            "exclude": true,
+            "comment": "Don't open up the be a host page in the app"
+          },
+          {
+            "/": "/shop/bmb/*",
+            "exclude": true,
+            "comment": "Don't open up the shop page in the app"
+          },
+          {
+            "/": "/brackets/*",
+            "?": { "has_fee": "true"},
+            "exclude": true,
+            "comment": "Ignore paid brackets"
+          },
+          {
+            "/": "*",
+            "comment": "Open up the rest of the pages in the app"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "6N4HR28LLR.com.backmybracket.app"
+    ]
+  }
+}
