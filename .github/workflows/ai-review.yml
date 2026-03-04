@@ -29,30 +29,16 @@ jobs:
           echo "===== DIFF CONTENT ====="
           cat diff.txt
 
-      - name: Call AI API
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Generate Mock AI Review (Free Testing)
         run: |
-          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer $OPENAI_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d @- <<EOF
-          {
-            "model": "gpt-4o-mini",
-            "messages": [
-              {"role": "system", "content": "You are a senior code reviewer."},
-              {"role": "user", "content": "Review this pull request diff and suggest improvements:\n$(cat diff.txt)"}
-            ]
-          }
-          EOF
-          )
+          echo "===== MOCK AI REVIEW ====="
+          echo "This is a simulated AI review for testing purposes." > review.txt
+          echo "" >> review.txt
+          echo "Suggestions:" >> review.txt
+          echo "- Follow proper naming conventions." >> review.txt
+          echo "- Remove unnecessary blank lines." >> review.txt
+          echo "- Ensure environment variables are documented." >> review.txt
 
-          echo "===== RAW API RESPONSE ====="
-          echo "$RESPONSE"
-
-          echo "$RESPONSE" | jq -r '.choices[0].message.content' > review.txt
-
-          echo "===== CLEAN REVIEW ====="
           cat review.txt
 
       - name: Post Comment to PR
