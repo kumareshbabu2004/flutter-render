@@ -17,10 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get PR diff
+      # ✅ FIXED: Get PR diff using GitHub API (No merge-base issue)
+      - name: Get PR diff from GitHub API
         run: |
-          git fetch origin ${{ github.base_ref }}
-          git diff origin/${{ github.base_ref }}...HEAD > diff.txt
+          curl -L \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3.diff" \
+            ${{ github.event.pull_request.url }} \
+            -o diff.txt
+
           echo "===== DIFF CONTENT ====="
           cat diff.txt
 
