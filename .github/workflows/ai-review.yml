@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # ✅ FIXED: Get PR diff using GitHub API (No merge-base issue)
+      #  FIXED: Get PR diff using GitHub API (No merge-base issue)
       - name: Get PR diff from GitHub API
         run: |
           curl -L \
@@ -66,5 +66,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "🤖 AI Code Review Result:\n\n" + review
+              body: " AI Code Review Result:\n\n" + review
             });
