@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install jq
-        run: sudo apt-get install -y jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       # Get PR diff
       - name: Get PR diff
@@ -37,19 +37,24 @@ jobs:
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
         run: |
-          DIFF=$(cat diff.txt | head -c 12000)
+
+          # Limit diff size to avoid API limits
+          DIFF=$(head -c 12000 diff.txt)
+
+          # Escape JSON safely
+          SAFE_DIFF=$(printf '%s' "$DIFF" | jq -Rs .)
 
           RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
             -H "x-api-key: $CLAUDE_API_KEY" \
             -H "anthropic-version: 2023-06-01" \
             -H "Content-Type: application/json" \
             -d "{
-              \"model\": \"claude-3-haiku-20240307\",
-              \"max_tokens\": 800,
+              \"model\": \"claude-haiku-4-5-20251001\",
+              \"max_tokens\": 500,
               \"messages\": [
                 {
                   \"role\": \"user\",
-                  \"content\": \"You are a senior software engineer. Review this pull request diff and give suggestions for code quality, security, and best practices:\n\n$DIFF\"
+                  \"content\": \"You are a senior software engineer. Review this pull request diff and give suggestions for code quality, security, and best practices:\n\n\" + $SAFE_DIFF
                 }
               ]
             }")
