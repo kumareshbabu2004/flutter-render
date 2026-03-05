@@ -3,6 +3,9 @@ name: Claude AI Code Review
 on:
   pull_request:
     types: [opened, synchronize]
+    branches-ignore:
+      - main
+      - master
 
 permissions:
   contents: read
