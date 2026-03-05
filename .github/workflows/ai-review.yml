@@ -14,14 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Install jq
       - name: Install jq
-        run: sudo apt-get install -y jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
-      # Get PR diff
-      - name: Get PR diff
+      # 3️⃣ Get PR diff
+      - name: Get PR diff from GitHub API
         run: |
           curl -L \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
@@ -29,15 +31,17 @@ jobs:
             ${{ github.event.pull_request.url }} \
             -o diff.txt
 
-          echo "===== DIFF ====="
+          echo "===== DIFF CONTENT ====="
           cat diff.txt
 
-      # Call Claude API
+      # 4️⃣ Call Claude API
       - name: Call Claude API
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
         run: |
           DIFF=$(cat diff.txt | head -c 12000)
+
+          SAFE_DIFF=$(jq -Rs . <<< "$DIFF")
 
           RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
             -H "x-api-key: $CLAUDE_API_KEY" \
@@ -49,12 +53,12 @@ jobs:
               \"messages\": [
                 {
                   \"role\": \"user\",
-                  \"content\": \"You are a senior software engineer. Review this pull request diff and give suggestions for code quality, security, and best practices:\n\n$DIFF\"
+                  \"content\": \"You are a senior software engineer. Review this pull request diff and give suggestions for security, performance, and best practices:\n\n$DIFF\"
                 }
               ]
             }")
 
-          echo "===== CLAUDE RESPONSE ====="
+          echo "===== RAW CLAUDE RESPONSE ====="
           echo "$RESPONSE"
 
           echo "$RESPONSE" | jq -r '.content[0].text' > review.txt
@@ -62,17 +66,22 @@ jobs:
           echo "===== CLEAN REVIEW ====="
           cat review.txt
 
-      # Post comment to PR
-      - name: Comment PR
+      # 5️⃣ Post Comment to Pull Request
+      - name: Post Comment to PR
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const review = fs.readFileSync('review.txt', 'utf8');
+
+            let review = "Claude did not return a response.";
+
+            if (fs.existsSync('review.txt')) {
+              review = fs.readFileSync('review.txt', 'utf8');
+            }
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "🤖 **Claude AI Code Review:**\n\n" + review
+              body: "🤖 **Claude AI Code Review Result:**\n\n" + review
             });
