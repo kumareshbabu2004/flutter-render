@@ -40,18 +40,17 @@ jobs:
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
         run: |
-
           DIFF=$(head -c 12000 diff.txt)
 
           REQUEST=$(jq -n \
             --arg diff "$DIFF" \
             '{
-              model: "claude-3-haiku-20240307",
-              max_tokens: 800,
+              model: "claude-3-5-haiku-latest",
+              max_tokens: 1000,
               messages: [
                 {
                   role: "user",
-                  content: ("You are a senior software engineer. Review this pull request diff and give suggestions for security, performance, and best practices:\n\n" + $diff)
+                  content: "You are a senior software engineer. Review this pull request diff and give suggestions for security, performance, and best practices:\n\n\($diff)"
                 }
               ]
             }')
@@ -65,10 +64,9 @@ jobs:
           echo "===== CLAUDE RESPONSE ====="
           echo "$RESPONSE"
 
-          echo "$RESPONSE" | jq -r '.content[0].text' > review.txt
-
-          echo "===== REVIEW ====="
-          cat review.txt
+          # Extract text safely
+          REVIEW_TEXT=$(echo "$RESPONSE" | jq -r '.content[0].text // "Error: Could not extract review text."')
+          echo "$REVIEW_TEXT" > review.txt
 
       # 5️⃣ Comment result on PR
       - name: Post Comment to PR
