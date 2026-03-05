@@ -48,7 +48,7 @@ jobs:
                             --arg prompt "$PROMPT" \
                             '{
                               model: $model,
-                              max_tokens: 400,
+                              max_tokens: 300,
                               messages: [
                                 { role: "user", content: $prompt }
                               ]
