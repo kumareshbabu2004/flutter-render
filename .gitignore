@@ -31,6 +31,10 @@ ios/Flutter/flutter_export_environment.sh
 *.swo
 
 # macOS
+
+
+
+
 .DS_Store
 
 # Archive (old code backups)
