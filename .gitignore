@@ -36,6 +36,9 @@ ios/Flutter/flutter_export_environment.sh
 # Archive (old code backups)
 _archive/
 
+
+
+
 # Misc
 *.log
 *.tmp
